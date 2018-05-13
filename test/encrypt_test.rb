@@ -5,9 +5,9 @@ require "minitest/autorun"
 require "minitest/pride"
 require './lib/encrypt'
 
-class Encrypt < Minitest::Test
+class EncryptTest < Minitest::Test
   def test_encrypt_instance_exists
-    enigma = Enigma.new
+    encrypt = Encrypt.new
 
     assert_instance_of Encrypt, encrypt
   end
