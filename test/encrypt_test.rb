@@ -12,3 +12,11 @@ class EncryptTest < Minitest::Test
     assert_instance_of Encrypt, encrypt
   end
 end
+
+class EncryptTest < Minitest::Test
+  def test_random_array_has_five_elements
+    encrypt = Encrypt.new
+
+    assert_equal random_array_maker.length, 5
+  end
+end
