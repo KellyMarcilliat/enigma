@@ -15,11 +15,4 @@ class RotorTest < Minitest::Test
     assert_instance_of Rotor, rotor_1
     assert_instance_of Rotor, rotor_2
   end
-
-  def test_the_rotors_are_different
-    rotor_1 = Rotor.new
-    rotor_2 = Rotor.new
-    refute rotor_1 == rotor_2
-  end
-
 end
