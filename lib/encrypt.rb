@@ -13,7 +13,6 @@ class Encrypt
   def random_array_maker
     rand(10000..99999).digits.reverse
   end
-  # p random_array_maker
 
   # gen ab, bc, cd, de combos of @random_array digits
   def key_maker(five_digit_array)
@@ -27,14 +26,14 @@ class Encrypt
 
   def date_maker
     date = DateTime.now
-  end 
+  end
 
-  # def date_array_maker
-  #   date_array = []
-  #   date_array << date.day
-  #   date_array << date.month
-  #   date_array << date.year - 2000
-  # end
+  def date_array_maker(date)
+    date_array = []
+    date_array << date.day
+    date_array << date.month
+    date_array << date.year - 2000
+  end
   # p date_maker
   # p date_maker[0].class
 

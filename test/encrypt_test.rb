@@ -4,6 +4,7 @@ require 'pry'
 require "minitest/autorun"
 require "minitest/pride"
 require './lib/encrypt'
+require 'date'
 
 class EncryptTest < Minitest::Test
   def test_encrypt_instance_exists
@@ -28,9 +29,14 @@ class EncryptTest < Minitest::Test
     assert DateTime.now
   end
 
-  # def test_date_array_maker_produces_array_of_day_month_year
-  #
-  # end
+  def test_date_array_maker_produces_array_of_day_month_year
+    encrypt = Encrypt.new
+    assert_equal [14, 5, 18], encrypt.date_array_maker(DateTime.now)
+  end
+
+  def test_offest_gives_array_of_last_four_digits_of_squared_date_array
+
+
 
 
 # class EncryptTest < Minitest::Test
