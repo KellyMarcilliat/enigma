@@ -15,4 +15,9 @@ class RotorTest < Minitest::Test
     assert_instance_of Rotor, rotor_1
     assert_instance_of Rotor, rotor_2
   end
+  def test_rotation
+    rotor_1 = Rotor.new
+    array = rotor_1.alpha.rotate(5)
+    assert_equal array[0], "F"
+  end
 end
