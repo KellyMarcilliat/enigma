@@ -20,4 +20,9 @@ class RotorTest < Minitest::Test
     array = rotor_1.alpha.rotate(5)
     assert_equal array[0], "F"
   end
+  def test_rotation_past_z
+    rotor_1 = Rotor.new
+    array = rotor_1.alpha.rotate(27)
+    assert_equal array[0], "B"
+  end
 end
