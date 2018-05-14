@@ -6,8 +6,3 @@ class Rotor
     @alpha = ("A".."Z").to_a
   end
 end
-
-rotor_1 = Rotor.new
-
-
-p rotor_1.generate
