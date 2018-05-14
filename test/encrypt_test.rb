@@ -14,9 +14,29 @@ class EncryptTest < Minitest::Test
 end
 
 class EncryptTest < Minitest::Test
-  def test_random_array_has_five_elements
+  def test_random_array_changes_five_single_digits_to_four_double_digits
     encrypt = Encrypt.new
+    encrypt.key_maker(1, 7, 2, 9, 1)
 
-    assert_equal random_array_maker.length, 5
+    assert_equal [17, 72, 29, 91], key_maker([1, 7, 2, 9, 1])
   end
 end
+
+# class EncryptTest < Minitest::Test
+#   def test_date_array_has_3_elements
+#     encrypt = Encrypt.new
+#
+#     assert_equal date_maker.length, 3
+#   end
+# end
+
+class EncryptTest < Minitest::Test
+  def test_key_maker_has_four_elements
+    encrypt = Encrypt.new
+
+    assert key_maker.length, 4
+  end
+end
+
+# class EncryptTest < Minitest::Test
+#   def test_offset_

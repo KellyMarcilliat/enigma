@@ -9,32 +9,32 @@ end
 #gen a random number of 5 digits storing each digit in an array
 @random_array = []
 def random_array_maker
-  @random_array = rand(1000..99999).digits.reverse
+  @random_array = rand(10000..99999).digits
 end
 p random_array_maker
-#
-# # gen ab, bc, cd, de combos of @random_array digits
-# def key_maker
-#   @key = []
-#   @key << @random_array[0] * 10 + @random_array[1]
-#   @key << @random_array[1] * 10 + @random_array[2]
-#   @key << @random_array[2] * 10 + @random_array[3]
-#   @key << @random_array[3] * 10 + @random_array[4]
-# end
-# p key_maker
+
+# gen ab, bc, cd, de combos of @random_array digits
+def key_maker(random_array_maker)
+  @key = []
+  @key << @random_array[0] * 10 + @random_array[1]
+  @key << @random_array[1] * 10 + @random_array[2]
+  @key << @random_array[2] * 10 + @random_array[3]
+  @key << @random_array[3] * 10 + @random_array[4]
+end
+p key_maker
 #
 # #def create_offset
-# def date_maker
-#   date = DateTime.now
-#   p date
-#
-#   @date_array = []
-#   @date_array << date.month
-#   @date_array << date.day
-#   @date_array << date.year - 2000
-#   #date_array
-# end
-# p @date_maker
+def date_maker
+  date = DateTime.now
+  p date
+
+  @date_array = []
+  @date_array << date.day
+  @date_array << date.month
+  @date_array << date.year - 2000
+end
+p date_maker
+p date_maker[0].class
 #
 # def offset(date_maker)
 #   date_integer = @date_array.join.to_i#**2
