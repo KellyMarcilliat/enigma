@@ -11,16 +11,27 @@ class EncryptTest < Minitest::Test
 
     assert_instance_of Encrypt, encrypt
   end
-end
 
-class EncryptTest < Minitest::Test
-  def test_random_array_changes_five_single_digits_to_four_double_digits
+  def test_random_array_maker_gives_five_digits
     encrypt = Encrypt.new
-    encrypt.key_maker(1, 7, 2, 9, 1)
 
-    assert_equal [17, 72, 29, 91], key_maker([1, 7, 2, 9, 1])
+    assert_equal 5, encrypt.random_array_maker.length
   end
-end
+
+  def test_key_maker_changes_five_single_digits_to_four_double_digits
+    encrypt = Encrypt.new
+    assert_equal [17, 72, 29, 91], encrypt.key_maker([1, 7, 2, 9, 1])
+  end
+
+  def test_date_maker_gives_date_and_time
+    encrypt = Encrypt.new
+    assert DateTime.now
+  end
+
+  # def test_date_array_maker_produces_array_of_day_month_year
+  #
+  # end
+
 
 # class EncryptTest < Minitest::Test
 #   def test_date_array_has_3_elements
@@ -30,12 +41,7 @@ end
 #   end
 # end
 
-class EncryptTest < Minitest::Test
-  def test_key_maker_has_four_elements
-    encrypt = Encrypt.new
 
-    assert key_maker.length, 4
-  end
 end
 
 # class EncryptTest < Minitest::Test
