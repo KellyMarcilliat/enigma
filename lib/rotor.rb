@@ -8,6 +8,3 @@ class Rotor
   end
 
 end
-
-rotor_1 = Rotor.new
-rotor_2 = Rotor.new
