@@ -2,12 +2,11 @@ require 'pry'
 require 'date'
 
 class Encrypt
-  attr_reader :random_array
+  # attr_reader :random_array
 
   def initialize
-    @random_array = []
+    # @random_array = []
   end
-
 
   #gen a random number of 5 digits storing each digit in an array
   def random_array_maker
@@ -43,4 +42,11 @@ class Encrypt
     shift_array << key_array[3] + offset_array[3]
     # p shift_array
   end
+
+  def rotation_generator
+    random_array = random_array_maker
+    key_array = key_maker(random_array)
+    date_string = date_maker
+    offset_array = offset(date_string)
+    shift_array = shift(key_array, offset_array)
 end
