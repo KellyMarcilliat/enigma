@@ -49,4 +49,6 @@ class Encrypt
     date_string = date_maker
     offset_array = offset(date_string)
     shift_array = shift(key_array, offset_array)
+  end
+  p Encrypt.new.rotation_generator
 end
