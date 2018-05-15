@@ -5,7 +5,7 @@ class Decrypt
   attr_reader :five_digit_array
 
   def initialize
-    # @five_digit_array = ??????
+    # @five_digit_array = ?
   end
 
   # gen ab, bc, cd, de combos of @random_array digits
