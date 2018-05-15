@@ -35,25 +35,12 @@ class Encrypt
     date_last_four
   end
 
-  # def shift
-  #   @shift_array = []
-  #   @shift_array << @key[0] + @offset[0]
-  #   @shift_array << @key[1] + @offset[1]
-  #   @shift_array << @key[2] + @offset[2]
-  #   @shift_array << @key[3] + @offset[3]
-  #   # p shift_array
-
-  # def key_gen
-  #   key_maker(random_array_maker)
-  # end
-
+  def shift(key_array, offset_array)
+    shift_array = []
+    shift_array << key_array[0] + offset_array[0]
+    shift_array << key_array[1] + offset_array[1]
+    shift_array << key_array[2] + offset_array[2]
+    shift_array << key_array[3] + offset_array[3]
+    # p shift_array
+  end
 end
-
-# def effective_shift
-#   @effective_shift = []
-#   @effective_shift << @shift_array[0] %39
-#   @effective_shift << @shift_array[1] %39
-#   @effective_shift << @shift_array[2] %39
-#   @effective_shift << @shift_array[3] %39
-# end
-# p effective_shift

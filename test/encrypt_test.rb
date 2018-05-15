@@ -34,26 +34,10 @@ class EncryptTest < Minitest::Test
     date = Date.today.strftime("%d%m%y")
     assert_equal [8, 3, 2, 4], encrypt.offset(date)
   end
-  #
-  # def test_offest_gives_array_of_last_four_digits_of_squared_date_array
-  #   encrypt = Encrypt.new
-  #     assert_equal [8, 3, 2, 4], encrypt.offset([14, 05, 18])
-  #
-  # end
 
+  def test_shift_produces_array_of_keymaker_plus_offset
+    encrypt = Encrypt.new
 
-
-
-# class EncryptTest < Minitest::Test
-#   def test_date_array_has_3_elements
-#     encrypt = Encrypt.new
-#
-#     assert_equal date_maker.length, 3
-#   end
-# end
-
-
+    assert_equal [25, 75, 31, 95], encrypt.shift([17, 72, 29, 91], [8, 3, 2, 4])
+  end
 end
-
-# class EncryptTest < Minitest::Test
-#   def test_offset_
