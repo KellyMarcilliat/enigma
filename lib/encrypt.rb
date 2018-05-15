@@ -25,26 +25,23 @@ class Encrypt
   end
 
   def date_maker
-    date = DateTime.now
+    date = Date.today.strftime("%d%m%y")
   end
 
-  def date_array_maker(date)
-    date_array = []
-    date_array << date.day
-    date_array << date.month
-    date_array << date.year - 2000
+  def offset(date)
+    date = Date.today.strftime("%d%m%y")
+    date_squared = date.to_i ** 2
+    date_last_four = date_squared.digits[0..3].reverse
+    date_last_four
   end
-  # p date_maker
-  # p date_maker[0].class
 
-  # def offset(date_maker)
-  #   date_integer = @date_array.join.to_i#**2
-  #   date_squared = date_integer ** 2
-  #   @offset = date_squared.digits[0..3]
-  # end
-  # p offset(date_maker)
-  #
-  #
+  # def shift
+  #   @shift_array = []
+  #   @shift_array << @key[0] + @offset[0]
+  #   @shift_array << @key[1] + @offset[1]
+  #   @shift_array << @key[2] + @offset[2]
+  #   @shift_array << @key[3] + @offset[3]
+  #   # p shift_array
 
   # def key_gen
   #   key_maker(random_array_maker)
@@ -52,21 +49,6 @@ class Encrypt
 
 end
 
-# p key_maker
-#
-#
-#
-#
-# def shift
-#   @shift_array = []
-#   @shift_array << @key[0] + @offset[0]
-#   @shift_array << @key[1] + @offset[1]
-#   @shift_array << @key[2] + @offset[2]
-#   @shift_array << @key[3] + @offset[3]
-#   # p shift_array
-# end
-# p shift
-#
 # def effective_shift
 #   @effective_shift = []
 #   @effective_shift << @shift_array[0] %39

@@ -24,17 +24,22 @@ class EncryptTest < Minitest::Test
     assert_equal [17, 72, 29, 91], encrypt.key_maker([1, 7, 2, 9, 1])
   end
 
-  def test_date_maker_gives_date_and_time
+  def test_date_maker_gives_today_date_string
     encrypt = Encrypt.new
-    assert DateTime.now
+    assert Date.today
   end
 
-  def test_date_array_maker_produces_array_of_day_month_year
+  def test_offset_produces_array_last_four_digits_of_date_squared
     encrypt = Encrypt.new
-    assert_equal [14, 5, 18], encrypt.date_array_maker(DateTime.now)
+    date = Date.today.strftime("%d%m%y")
+    assert_equal [8, 3, 2, 4], encrypt.offset(date)
   end
-
-  def test_offest_gives_array_of_last_four_digits_of_squared_date_array
+  #
+  # def test_offest_gives_array_of_last_four_digits_of_squared_date_array
+  #   encrypt = Encrypt.new
+  #     assert_equal [8, 3, 2, 4], encrypt.offset([14, 05, 18])
+  #
+  # end
 
 
 
