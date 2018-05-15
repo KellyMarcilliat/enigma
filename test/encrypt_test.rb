@@ -9,13 +9,11 @@ require 'date'
 class EncryptTest < Minitest::Test
   def test_encrypt_instance_exists
     encrypt = Encrypt.new
-
     assert_instance_of Encrypt, encrypt
   end
 
   def test_random_array_maker_gives_five_digits
     encrypt = Encrypt.new
-
     assert_equal 5, encrypt.random_array_maker.length
   end
 
@@ -37,7 +35,12 @@ class EncryptTest < Minitest::Test
 
   def test_shift_produces_array_of_keymaker_plus_offset
     encrypt = Encrypt.new
-
     assert_equal [25, 75, 31, 95], encrypt.shift([17, 72, 29, 91], [8, 3, 2, 4])
+  end
+
+  def test_rotation_generator_produces_array_of_four_integers
+    encrypt = Encrypt.new
+    assert_equal 4, encrypt.rotation_generator.length
+    assert_equal Integer, encrypt.rotation_generator[0].class
   end
 end
