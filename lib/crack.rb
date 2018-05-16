@@ -24,12 +24,17 @@ class Crack
 
   # convert 10,000 to [10, 00, 00, 00]; 10,001 to [10, 00, 00, 01], etc until 99999 to [99, 99, 99, 99]
   def sequence(array)
+    # ADD LOOPING FX
     key = []
-    key << array[0] * 10 + array[1]
-    key << array[1] * 10 + array[2]
-    key << array[2] * 10 + array[3]
-    key << array[3] * 10 + array[4]
-    key
+    position = 0
+    while position < 10000 do
+      key << array[0] * 10 + array[1]
+      key << array[1] * 10 + array[2]
+      key << array[2] * 10 + array[3]
+      key << array[3] * 10 + array[4]
+      position +=
+    end
+    # key
   end
 
 # rotate message_array characters backwards per offsets
@@ -44,10 +49,8 @@ class Crack
       # if [1], key sequence is [3, 4, 1, 2, 3, 4, 1]
       # if [2], key sequence is [4, 1, 2, 3, 4, 1, 2]
       # if [3], key sequence is [1, 2, 3, 4, 1, 2, 3]
-  # convert 10,000 to [01, 12, 23, 34]
   # run adjusted_array backwards that amount (Pat's code)
   # if result is not "..end.."
-# convert 10,001 to
 end
 
 ## Idea:  if rotating backwards doesn't work, rotate forward (on the 10,000 and up thing)

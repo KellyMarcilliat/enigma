@@ -29,7 +29,7 @@ class CrackTest < Minitest::Test
 
   def test_sequence_can_iterate_10000_to_99999
     crack = Crack.new
-    assert_equal [99, 99, 99, 99], crack.sequence(10000)
+    assert_equal [99, 99, 99, 99], crack.sequence([1, 0, 0, 0, 0])
 
   end
 end
