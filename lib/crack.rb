@@ -1,4 +1,5 @@
 require 'pry'
+require './lib/key_generation'
 
 class Crack
   def initialize
@@ -36,7 +37,7 @@ class Crack
     end
     key
   end
-  
+
 # rotate message_array characters backwards per offsets
   # adjusted_message = message_array.backward_offset
   # adjusted_message  adjusted_array

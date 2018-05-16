@@ -5,6 +5,7 @@ require 'date'
 require "minitest/autorun"
 require "minitest/pride"
 require './lib/crack'
+require './lib/key_generation'
 
 class CrackTest < Minitest::Test
   def test_crack_instance_exists
@@ -33,6 +34,7 @@ class CrackTest < Minitest::Test
     skip
     crack = Crack.new
     assert_equal [99, 99, 99, 99], crack.sequence("10000")
-
   end
+
+
 end
