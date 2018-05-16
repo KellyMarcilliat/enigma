@@ -17,24 +17,40 @@ class Crack
     date_offset = date_squared.digits[0..3].reverse
   end
 
+  # separate 5 digit integer into array by digit in same order
+  def integer_to_array(five_digit_integer)
+    five_digit_array = five_digit_integer.digits.reverse
+  end
+
+  def sequencer
+    # calls key_maker and generates keys
+    integer = 10000
+    while integer <= 99999
+      five_digit_array = []
+      five_digit_array = integer.integer_to_array
+      key = five_digit_array.key_maker
+      # call rotator on key to produce array of characters
+      # reverse the array
+      # pull the final four characters
+      # compare against "nd.." and iterates of same
+    end
+    key
+  end
+  
 # rotate message_array characters backwards per offsets
   # adjusted_message = message_array.backward_offset
   # adjusted_message  adjusted_array
 # does adjusted message == "..end.."
   #
   # check adjusted_array against [00, 00, 00, 00]
-  # convert 10,000 to [01, 12, 23, 34]
-    # def converter
-      # key = []
-      # key << five_digit_array[0] * 10 + five_digit_array[1]
-      # key << five_digit_array[1] * 10 + five_digit_array[2]
-      # key << five_digit_array[2] * 10 + five_digit_array[3]
-      # key << five_digit_array[3] * 10 + five_digit_array[4]
-      # key
-    # end
+    # do converter below on 10000 to 99999 sequentially until output (in form of [ww, xx, yy, zz]) run backwards on message gives result of one of the following:
+      # ["..end.."]
+      # if [0], key sequence is [2, 3, 4, 1, 2, 3, 4]
+      # if [1], key sequence is [3, 4, 1, 2, 3, 4, 1]
+      # if [2], key sequence is [4, 1, 2, 3, 4, 1, 2]
+      # if [3], key sequence is [1, 2, 3, 4, 1, 2, 3]
   # run adjusted_array backwards that amount (Pat's code)
   # if result is not "..end.."
-# convert 10,001 to
 end
 
 ## Idea:  if rotating backwards doesn't work, rotate forward (on the 10,000 and up thing)
