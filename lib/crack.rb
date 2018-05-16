@@ -17,10 +17,12 @@ class Crack
     date_offset = date_squared.digits[0..3].reverse
   end
 
+  # separate 5 digit integer into array by digit in same order
   def integer_to_array(five_digit_integer)
     five_digit_array = five_digit_integer.digits.reverse
   end
 
+  # convert 10,000 to [10, 00, 00, 00]; 10,001 to [10, 00, 00, 01], etc until 99999 to [99, 99, 99, 99]
   def sequence(array)
     key = []
     key << array[0] * 10 + array[1]
@@ -43,14 +45,6 @@ class Crack
       # if [2], key sequence is [4, 1, 2, 3, 4, 1, 2]
       # if [3], key sequence is [1, 2, 3, 4, 1, 2, 3]
   # convert 10,000 to [01, 12, 23, 34]
-    # def converter
-      # key = []
-      # key << five_digit_array[0] * 10 + five_digit_array[1]
-      # key << five_digit_array[1] * 10 + five_digit_array[2]
-      # key << five_digit_array[2] * 10 + five_digit_array[3]
-      # key << five_digit_array[3] * 10 + five_digit_array[4]
-      # key
-    # end
   # run adjusted_array backwards that amount (Pat's code)
   # if result is not "..end.."
 # convert 10,001 to
