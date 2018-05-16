@@ -34,6 +34,13 @@ class EnignmaTest < Minitest::Test
     refute_equal "A", shifted[0]
   end
 
+  def test_have_hash_contains_shifted_and_unshited
+    e = Enigma.new
+    codes = e.shift_rotor_and_gen_code
+    p codes
+
+  end
+
   def test_receive_message
     message = Enigma.new.receive_message_and_split("hello")
     assert_equal "h", message[0]
