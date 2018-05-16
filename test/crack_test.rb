@@ -21,4 +21,15 @@ class CrackTest < Minitest::Test
     crack = Crack.new
     assert_equal [8, 3, 2, 4], crack.reverse_date_offset("150518")
   end
+
+  def test_integer_to_array
+    crack = Crack.new
+    assert_equal [1, 0, 0, 0, 0], crack.integer_to_array(10000)
+  end
+
+  def test_sequence_can_iterate_10000_to_99999
+    crack = Crack.new
+    assert_equal [99, 99, 99, 99], crack.sequence(10000)
+
+  end
 end
