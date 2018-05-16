@@ -22,21 +22,21 @@ class Crack
     five_digit_array = five_digit_integer.digits.reverse
   end
 
-  # convert 10,000 to [10, 00, 00, 00]; 10,001 to [10, 00, 00, 01], etc until 99999 to [99, 99, 99, 99]
-  def sequence(array)
-    # ADD LOOPING FX
-    key = []
-    position = 0
-    while position < 10000 do
-      key << array[0] * 10 + array[1]
-      key << array[1] * 10 + array[2]
-      key << array[2] * 10 + array[3]
-      key << array[3] * 10 + array[4]
-      position +=
+  def sequencer
+    # calls key_maker and generates keys
+    integer = 10000
+    while integer <= 99999
+      five_digit_array = []
+      five_digit_array = integer.integer_to_array
+      key = five_digit_array.key_maker
+      # call rotator on key to produce array of characters
+      # reverse the array
+      # pull the final four characters
+      # compare against "nd.." and iterates of same
     end
-    # key
+    key
   end
-
+  
 # rotate message_array characters backwards per offsets
   # adjusted_message = message_array.backward_offset
   # adjusted_message  adjusted_array
@@ -44,7 +44,7 @@ class Crack
   #
   # check adjusted_array against [00, 00, 00, 00]
     # do converter below on 10000 to 99999 sequentially until output (in form of [ww, xx, yy, zz]) run backwards on message gives result of one of the following:
-      # ["..end..", ".end...", "end....", "nd....e", "d....en", "....end", "...end."]
+      # ["..end.."]
       # if [0], key sequence is [2, 3, 4, 1, 2, 3, 4]
       # if [1], key sequence is [3, 4, 1, 2, 3, 4, 1]
       # if [2], key sequence is [4, 1, 2, 3, 4, 1, 2]
